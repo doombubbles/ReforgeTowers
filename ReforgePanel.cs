@@ -8,6 +8,7 @@ using Il2Cpp;
 using Il2CppAssets.Scripts.Unity.UI_New.InGame;
 using Il2CppAssets.Scripts.Unity.UI_New.InGame.TowerSelectionMenu;
 using Il2CppNinjaKiwi.Common;
+using Il2CppNinjaKiwi.Localization;
 using Il2CppTMPro;
 using MelonLoader;
 using UnityEngine;
@@ -15,7 +16,7 @@ using UnityEngine;
 namespace ReforgeTowers;
 
 [RegisterTypeInIl2Cpp(false)]
-public class ReforgePanel : MonoBehaviour
+public class ReforgePanel(IntPtr ptr) : MonoBehaviour(ptr)
 {
     public TowerSelectionMenu menu = null!;
 
@@ -24,10 +25,6 @@ public class ReforgePanel : MonoBehaviour
     public ModHelperText cost = null!;
 
     public ModHelperText description = null!;
-
-    public ReforgePanel(IntPtr ptr) : base(ptr)
-    {
-    }
 
     public void OnReforgeClicked()
     {
@@ -109,7 +106,7 @@ public class ReforgePanel : MonoBehaviour
         }, VanillaSprites.BrownInsertPanelDark, RectTransform.Axis.Horizontal, 25);
 
         reforgePanel.button = inset.AddButton(new Info("ReforgeButton", 225),
-            VanillaSprites.GreenBtn, new Action(() => reforgePanel.OnReforgeClicked()));
+            VanillaSprites.GreenBtn, new Action(reforgePanel.OnReforgeClicked));
         reforgePanel.button.AddImage(
             new Info("Image") { AnchorMin = new Vector2(0, 0), AnchorMax = new Vector2(1, 1), Size = -50 },
             ModContent.GetTextureGUID<ReforgeTowersMod>("Hammer"));
