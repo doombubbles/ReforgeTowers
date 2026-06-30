@@ -1,0 +1,31 @@
+[package]
+name = "ReforgeTowers"
+namespace = "doombubbles"
+description = "Lets you reforge towers in a similar way to how you can reforge items in Terraria. The price of reforging a tower is proportional to its total worth."
+websiteUrl = "https://github.com/doombubbles/ReforgeTowers"
+
+[package.dependencies]
+LavaGang-MelonLoader = "0.7.3"
+doombubbles-Btd6ModHelper = "3.6.5"
+
+[build]
+icon = "./Icon.png"
+readme = "./README.md"
+outdir = "bin"
+
+[[build.copy]]
+source = "./bin/Release/ReforgeTowers.dll"
+target = "ReforgeTowers.dll"
+
+[[build.copy]]
+source = "./CHANGELOG.md"
+target = "./CHANGELOG.md"
+
+[[build.copy]]
+source = "./LICENSE"
+target = "./LICENSE"
+
+[publish]
+repository = "https://thunderstore.io"
+communities = ["bloons-td-6"]
+categories = ["mods"]

@@ -13,5 +13,6 @@ public static class ModHelperData
         "Note: for Heroes, the price multiplier is applied to XP gains instead.";
 
     public const string RepoOwner = "doombubbles";
-    public const string RepoName = "reforge-towers";
+    public const string PrevRepoName = "reforge-towers";
+    public const string RepoName = "ReforgeTowers";
 }
